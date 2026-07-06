@@ -19,8 +19,8 @@ library(haven)
 library(ggplot2)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 9/'
 
 twea.df <- read_dta(paste0(data_path, 'twea_data.dta')) 
 
@@ -35,8 +35,10 @@ fig.df <-
 fig.df %>%
     ggplot(., aes(x = grntyr, y = patents, 
                   color = as.factor(licensed_class),
+                  #shape = as.factor(licensed_class),
                   linetype = as.factor(licensed_class))) +
     geom_line() +
+    #geom_point() +
     theme_bw(base_size = 12) +
     labs(x = '',
          y = 'Patents per year and field',
@@ -53,6 +55,9 @@ fig.df %>%
                                   'Fields with Compulsory Licenses')) +
     scale_linetype_manual(values = c('longdash', 'solid'),
                           labels = c('Fields w/o Compulsory Licenses', 
-                                     'Fields with Compulsory Licenses'))
+                                     'Fields with Compulsory Licenses')) +
+    scale_shape_manual(values = c(5, 19),
+                       labels = c('Fields w/o Compulsory Licenses', 
+                                  'Fields with Compulsory Licenses'))
 
 ggsave(paste0(output_path, 'Figure_9.3.png'), width = 8, height = 6)            

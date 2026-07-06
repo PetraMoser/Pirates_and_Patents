@@ -19,8 +19,8 @@ library(haven)
 library(ggplot2)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 9/'
 
 twea.df <- read_dta(paste0(data_path, 'class_year.dta'))
 
@@ -54,6 +54,7 @@ PanelA.df %>%
           panel.grid = element_blank()) +
     labs(x = '',
          color = '',
+         #shape = '',
          linetype = '')
 
 ggsave(paste0(output_path, 'Figure_9.9_panelA.png'), width = 6, height = 5)

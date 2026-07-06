@@ -19,8 +19,8 @@ library(haven)
 library(ggplot2)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 9/'
 
 twea.df <- read_dta(paste0(data_path, 'twea_data.dta')) 
 
@@ -52,6 +52,7 @@ margin_eff %>%
     labs(y = 'Patents per year and field',
          x = '',
          color = '',
+         shape = '',
          linetype = '',
          limits = '') +
     scale_x_continuous(breaks = seq(1800, 1940, by = 10)) +

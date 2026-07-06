@@ -20,8 +20,8 @@ library(cowplot)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/operas/'
+output_path <- '../Chapter 11/'
 
 composers.df <- read.xlsx(paste0(data_path, 'Fig 5.xlsx'))
 

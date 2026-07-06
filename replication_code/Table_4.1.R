@@ -19,8 +19,8 @@ library(readxl)
 library(gt) # format table
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 4/'
 
 britain.df <- read_excel(paste0(data_path, 'Britain1851.xls'))
 us.df <- read_excel(paste0(data_path, 'usa1851_census.xls'))

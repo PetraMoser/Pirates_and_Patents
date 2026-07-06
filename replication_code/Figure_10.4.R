@@ -19,8 +19,8 @@ library(haven)
 library(ggplot2)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/ppa/'
+output_path <- '../Chapter 10/'
 
 ppa.df <- read_dta(paste0(data_path, 'PlantPat_DateMerge.dta'))
 

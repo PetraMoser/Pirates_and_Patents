@@ -19,8 +19,8 @@ library(readxl)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 6/'
 
 patents.df <- read_excel(paste0(data_path, 'sewing_machines906022.xls'), sheet = 'Tab sm pat total pat')
 
@@ -43,10 +43,12 @@ fig.df <-
 fig.df %>%
     ggplot(., aes(x = year, 
                   y = share,
+                  #shape = country,
                   color = country,
                   group = country, # ggplot was having problems grouping
                   linetype = country)) +
     geom_line() +
+    #geom_point() +
     theme_bw(base_size = 14) +
     theme(legend.position = 'bottom',
           panel.grid = element_blank(),
@@ -54,6 +56,7 @@ fig.df %>%
     labs(x = '', y = '', color = '', linetype = '', shape = '') +
     scale_color_manual(values = c('#686D76', '#222222')) +
     scale_linetype_manual(values = c('longdash', 'solid')) +
+    scale_shape_manual(values = c(22, 20)) +
     geom_vline(xintercept = 1856, linetype = 'dotted') +
     geom_text(inherit.aes = F,
               x = 1852.5, y = 0.025, 

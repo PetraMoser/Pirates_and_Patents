@@ -19,8 +19,8 @@ library(haven)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 3/'
 
 prize.df <- read_dta(paste0(data_path, 'pat_prize_sciam_cit.dta'))
 
@@ -48,6 +48,7 @@ fig.3.7.df %>%
     ggplot(., aes(x = year, y = patents, 
                   linetype = t2X)) +
     geom_line(linewidth = .6) +
+    #geom_point() +
     scale_y_continuous(breaks = seq(0, 2, by = 0.1)) +
     scale_x_continuous(breaks = seq(1840, 1870, by = 3)) +
     theme_bw(base_size = 13) +

@@ -20,8 +20,8 @@ library(readxl)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/operas/'
+output_path <- '../Chapter 11/'
 
 opera.df <- haven::read_dta(paste0(data_path, '20years.dta')) 
 
@@ -46,7 +46,7 @@ opera.df %>%
              x = 1805.4, y = 7.7,
              label = '1801 Copyright Law',
              vjust = 1, size = 4, color = 'black') +
-    theme_classic(base_size = 14) +
+    theme_bw(base_size = 14) +
     scale_color_manual(values = c('#222222', '#686D76')) +
     labs(x = '',
          y = 'Mean New Operas Per Year') +
@@ -54,6 +54,7 @@ opera.df %>%
     theme(legend.position = 'bottom',
           legend.title = element_blank(),
           legend.box.background = element_rect(),
+          panel.grid = element_blank(),
           axis.text.x = element_text(size = 10),
           axis.text.y = element_text(size = 10))
 

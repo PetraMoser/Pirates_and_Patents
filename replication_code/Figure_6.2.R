@@ -19,8 +19,8 @@ library(haven)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 6/'
 
 stitch.df <- read_dta(paste0(data_path, 'RJE_data140123.dta'))
 
@@ -28,15 +28,15 @@ stitch.df <- read_dta(paste0(data_path, 'RJE_data140123.dta'))
 fig.df <-
     stitch.df %>%
     filter(between(year, 1850, 1885)) %>%
-    # identify chainstitch (subclass between 197 to 202)
-    # identify lockstitch (subclass between 181 and 196)
     mutate(chain = ifelse(between(subclass, 197, 202), total_count, 0),
            lock = ifelse(between(subclass, 181, 196), total_count, 0)) %>%
+    
     # aggregate patents by year
     group_by(year) %>%
     summarise(chain = sum(chain),
               lock = sum(lock),
               .groups = 'drop') %>%
+    
     # transform to long format
     pivot_longer(cols = !year,
                  names_to = 'stitch',
@@ -61,6 +61,8 @@ fig.df %>%
     scale_color_manual(values = c('#686D76', '#222222'),
                        labels = c('Chain stitch', 'Lockstitch')) +
     scale_linetype_manual(values = c('solid', 'longdash'),
+                          labels = c('Chain stitch', 'Lockstitch')) +
+    scale_shape_manual(values = c(1, 17),
                           labels = c('Chain stitch', 'Lockstitch')) +
     scale_x_continuous(breaks = seq(1850, 1890, by = 5)) +
     geom_vline(xintercept = 1856, linetype = 'dashed') +

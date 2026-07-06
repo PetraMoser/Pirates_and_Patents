@@ -20,8 +20,8 @@ library(haven)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 5/'
 
 exhibit.df <- read_excel(paste0(data_path, 'rpat100513.xls'), skip = 1)
 

@@ -21,8 +21,8 @@ library(cowplot)
 library(ggrepel)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/operas/'
+output_path <- '../Chapter 11/'
 
 opera.df <- haven::read_dta(paste0(data_path, 'repeated_performances140405.dta'))
 

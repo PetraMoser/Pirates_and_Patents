@@ -21,8 +21,8 @@ library(ggplot2)
 
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 11/'
 
 dead_poets.df <- haven::read_dta(paste0(data_path, 'dat_rom_ecb_final.dta'))
 

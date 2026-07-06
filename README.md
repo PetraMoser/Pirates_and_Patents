@@ -17,10 +17,11 @@ We have the following project layout:
 └── README.md              # Project documentation
 ```
 
-## Data Files for Figures and Tables
+## Data Files for Figures and Tables 
 
 | **Data Description** | **Data File** | **Publication** |
 |----------------------|---------------|------------------|
+| 150 years of patents obtained through API | `patents_per_year.csv` | 150 years of Patent Protection by Josh Lerner|
 | Manually collected yearly data on patent applications and sealed patents in Great Britain between 1617 and 1938. | `Brit_patents_app_sealed1617-1938.xlsx` | Mitchell, Brian R. *British Historical Statistics*. Cambridge University Press, 1988. |
 | Country–year dataset for international exhibitions (1851 Crystal Palace and 1876 Centennial Exhibition) including number of exhibits by industry class, medal counts (Council, Prize, Honor), patent length, patent fees, population, and GDP. | `rpat100513.xls` | Moser, Petra. “How Do Patent Laws Influence Innovation? Evidence from Nineteenth-Century World Fairs.” *American Economic Review* 95, no. 4 (2005): 1214–1236. |
 | Patent-level data identifying prize-winning inventions at the 1851 Crystal Palace Exhibition and inventions publicized in *Scientific American*, including USPTO class and patent status indicators. | `pat_prize_sciam_cit.dta` | Moser, Petra, and Tom Nicholas. “Prizes, Publicity, and Patents: Non-Monetary Awards as a Mechanism to Encourage Innovation.” *Journal of Industrial Economics* 61 (2013): 763–788. |
@@ -48,19 +49,22 @@ We have the following project layout:
 ## Data Files for Replication Code
 | **Code Description** | **Code File** | **Data File(s) Used** |
 |----------------------|---------------|-----------------------|
-|Replication of Figure 1.4 | `Figure_1.4.R` | `Brit_patents_app_sealed1617-1938.xlsx`|
+|Replication of Figure 1.5 |  `Figure_1.5_preprocess.ipynb`; `Figure_1.5.R` | `patents_per_year.csv`; `Brit_patents_app_sealed1617-1938.xlsx`|
+|Replication of Figure 1.7 |  `Figure_1.7.R` | `pat_timeline.xlsx`|
 |Replication of Figure 3.1 |  `Figure_3.1.R` | `rpat100513.xls`|
 |Replication of Figure 3.6 |  `Figure_3.6.R` | `rpat100513.xls`|
 |Replication of Figure 3.7 |  `Figure_3.7.R` | `pat_prize_sciam_cit.dta`|
 |Replication of Figure 5.1 |  `Figure_5.1.R` | `usa1851_JO90724.xls`; `Britain1851.xls`; `industry.dta`|
-|Replication of Figure 5.2 |  `Figure_5.2.R` | `rpat100513.xls`|
-|Replication of Figure 5.4 |  `Figure_5.4.R` | `rpat509rep.xls`|
+|Replication of Figure 5.3 |  `Figure_5.3.R` | `rpat100513.xls`|
+|Replication of Figure 5.6 |  `Figure_5.6.R` | `rpat509rep.xls`|
 |Replication of Figure 6.1 |  `Figure_6.1.R` | `sewing_machines906022.xls`, sheet = `Tab sm pat total pat`|
 |Replication of Figure 6.2 |  `Figure_6.2.R` | `RJE_data140123.dta`|
+|Replication of Figure 9.3 |  `Figure_9.3.R` | `twea_data.dta`|
 |Replication of Figure 9.4 |  `Figure_9.4.R` | `twea_data.dta`|
-|Replication of Figure 9.5 |  `Figure_9.5.R` | `twea_data.dta`|
-|Replication of Figure 9.7 |  `Figure_9.7.R` | `twea_data.dta`|
-|Replication of Figure 9.9 |  `Figure_9.7.R` | `class_year.dta`|
+|Replication of Figure 9.6 |  `Figure_9.6.R` | `twea_data.dta`|
+|Replication of Figure 9.8 |  `Figure_9.8.R` | `class_year.dta`|
+|Replication of Figure 9.9 |  `Figure_9.9.R` | `class_year.dta`|
+|Replication of Figure 10.4 |  `Figure_10.4.R` | `PlantPatDateMerge.dta`|
 |Replication of Figure 11.2 |  `Figure_11.2.R` | `20years.dta`|
 |Replication of Figure 11.3 |  `Figure_11.3.R` | `Fig 5.xlsx`|
 |Replication of Figure 11.4 |  `Figure_11.4.R` | `repeated_performances140405.dta`|

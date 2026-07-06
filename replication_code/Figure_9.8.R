@@ -19,11 +19,10 @@ library(haven)
 library(ggplot2)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 9/'
 
 twea.df <- read_dta(paste0(data_path, 'class_year.dta'))
-quality <- read_dta(paste0(data_path, 'list_renewal.dta'))
 
 # create df for figure
 fig.df <-
@@ -42,6 +41,9 @@ fig.df %>%
     scale_linetype_manual(values = c('longdash', 'solid'),
                           labels = c('Fields w/o Compulsory Licenses',
                                      'Fields with Compulsory Licenses')) +
+    scale_shape_manual(values = c(12, 19),
+                       labels = c('Fields w/o Compulsory Licenses',
+                                  'Fields with Compulsory Licenses')) +
     scale_color_grey(start = 0.5, end = 0.2,
                      labels = c('Fields w/o Compulsory Licenses',
                                 'Fields with Compulsory Licenses')) +

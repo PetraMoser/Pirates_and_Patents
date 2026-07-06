@@ -19,8 +19,8 @@ library(readxl)
 library(haven)
 
 # data paths and data 
-data_path <- '../data/'
-output_path <- '../figures/'
+data_path <- '../Data/'
+output_path <- '../Chapter 5/'
 
 US.df <- read_excel(paste0(data_path, 'usa1851_JO90724.xls')) 
 britain.df <- read_excel(paste0(data_path, 'Britain1851.xls')) 
@@ -77,7 +77,8 @@ patent_country.df %>%
     ggplot(., aes(x = patented, y = reorder(ind_lbl, patented), color = country)) +
     stat_summary_bin(position = position_dodge(width = 0.5)) +
     theme_bw(base_size = 12) +
-    labs(x = 'Patented Exhibits / All Exhibits',
+    labs(#subtitle = 'Panel A: Patent Use by Industry in 1851, United States vs. Britain',
+         x = 'Patented Exhibits / All Exhibits',
          y = '',
          color = '') +
     theme(legend.position = c(.8, .1),
@@ -114,9 +115,11 @@ patent_exhibit.df %>%
           legend.background = element_rect(color = 'black', size = 0.5),
           legend.margin = margin(-4, 8, 6, 8),
           panel.grid = element_blank(),
+          #axis.ticks.y = element_blank(),
           axis.text = element_text(color = 'black')) +
     scale_x_continuous(breaks = seq(0, 1, by = 0.1)) +
-    labs(x = 'Rate of Patenting',
+    labs(#subtitle = 'Panel B: Patent Use by Industry in 1851, British Exhibits',
+         x = 'Rate of Patenting',
          color = '',
          y = '')
 
